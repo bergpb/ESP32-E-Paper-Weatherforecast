@@ -19,7 +19,7 @@
 #include <HTTPClient.h>
 #include <Adafruit_NeoPixel.h>             //Depend  https://github.com/adafruit/Adafruit_NeoPixel
 
-#include <GxDEPG0213BN/GxDEPG0213BN.h>    // 2.13" b/w  form DKE GROUP
+#include <GxGDEM0213B74/GxGDEM0213B74.h>    // 2.13" b/w  form DKE GROUP
 
 const uint64_t uS_TO_S_FACTOR = 1000000;  /* Conversion factor for micro seconds to seconds */
 const uint64_t TIME_TO_SLEEP  = 3600;        /* Time ESP32 will go to sleep (in seconds) every 1h*/
@@ -73,7 +73,7 @@ HTTPClient httpWeather;
 void set_WiFi()
 {
   WiFi.mode(WIFI_STA);
-  WiFi.begin("<ssid>", "<psw>"); 
+  WiFi.begin("xxxx", "xxxx"); 
   //WiFi.scanNetworks will return the number of networks found
 
   int count = 0;
@@ -100,8 +100,8 @@ void set_WiFi()
 void get_weather(){
 
 
-  httpWeather.begin("http://api.openweathermap.org/data/2.5/forecast?q=<city>,de&cnt=3&units=metric&appid=<api>");
-  httpWeatherNow.begin("http://api.openweathermap.org/data/2.5/weather?q=<city>,de&cnt=3&units=metric&appid=<api>");
+  httpWeather.begin("http://api.openweathermap.org/data/2.5/forecast?q=Caucaia,br&cnt=3&units=metric&appid=xxxx");
+  httpWeatherNow.begin("http://api.openweathermap.org/data/2.5/weather?q=Caucaia,br&cnt=3&units=metric&appid=xxxx");
   int httpCodeWeather = httpWeather.GET();
   int httpCodeWeatherNow = httpWeatherNow.GET();
 
